@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Hello!
+title: Welcome!
 tagline: 
 ---
 {% include JB/setup %}
 
-## Welcome
+## About
 
 This will eventually be like a blog or something, I dunno... We'll figure it out together!
