@@ -9,21 +9,30 @@ tagline:
 
 This will eventually be like a blog or something, I dunno... We'll figure it out together!
 
-<article>
-<h1 class="title">Blog Archive</h1>
-<section>
-{% for post in site.categories.blog %}
-{% capture post_month %}
-{{post.date | date: "%m"}}
-{% endcapture %}
-{% if post_month != prev_post_month %}
-{% if prev_post_month %}
-<br><!-- close month -->
-{% endif %}
-<b>{{post.date | date: "%B %Y"}}</b><br><!-- br is open month -->
-{% endif %}
-<a href="{{ post.url }}">{{ post.title }}</a> <time>{{post.date | date: "%A %e" }}</time><br>
-{% capture prev_post_month %}{{post_month}}{% endcapture %}
+{% for post in site.posts offset: 0 limit: 50 %}
+<div class="row">
+  <div class="span7">
+    <div class="row">
+      <div class="span2 hidden-phone hidden-tablet">
+        <a href="{{ post.url }}" >
+            <img class="listImage img-rounded" border="0" src="/img/posts/{{ post.image }}" alt="{{ post.title }} image">
+        </a>
+      </div>
+      <div class="span5">
+<h4><strong><a href="{{ post.url }}">{{ post.title }}</a></strong></h4>
+        <p>
+          {{ post.summary }}
+        </p>
+<p>
+          <i class="icon-calendar"></i> {{ post.date | date: "%B %e, %Y" }}
+          | <i class="icon-comment"></i> <a href="{{ site.url }}{{ post.url }}#disqus_thread"></a>
+<br />
+          <i class="icon-tags"></i> Tags :{% for tag in post.tags %} <a href="/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a> {% if forloop.last != true %} {% endif %} {% endfor %}
+        </p>
+        <p><a href="{{ post.url }}">Read more</a></p>
+      </div>
+    </div>
+<hr>
+  </div>
+</div>
 {% endfor %}
-</section>
-</article>
