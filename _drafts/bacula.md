@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Bacula"
+title: Bacula
 description: ""
-category: 
+category: null
 tags: []
-excerpt:
+excerpt: null
+published: true
 ---
+
 {% include JB/setup %}
 
-I feel like I shoudl write some shit about bacula.
+This is just to test prose.io's conversion from draft to post.
