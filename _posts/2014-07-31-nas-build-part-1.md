@@ -22,6 +22,7 @@ My goals for this build were to have something in a smaller form factor, running
 ## Assembly
 I'm not going to go through how to put together a computer. It's fairly straightforward, and there's a billion-and-one tutorials already out there. The interesting part of this story is the software, which due to current circumstances I'm postponing for another post.
 Anyways, I guess now is as good a time as any to air some grievances, and talk about a few caveats-
+
 * Many people have groaned about the quality control on the Cooler Master Elite 130, especially the mount points for the standoffs
 * My issue was that all of the screws were **very** tight in their holes
    * In the interest of fairness- after being put in and taken out a few times, most of them loosened up to a reasonable level
