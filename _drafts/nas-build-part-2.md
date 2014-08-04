@@ -9,12 +9,42 @@ published: true
 
 {% include JB/setup %}
 
-**ALSO GONNA WANT TO DO PRE-INSTALL**
-## Software
-I've yet to actually install the system as of the writing of this post, but I do know what I am going to do, so whatever, here it is.
-I was initially going to go with [FreeNAS](http://www.freenas.org/) because I wanted something that was pretty much point-and-click, but after some evaluation via virtual machines, I decided I didn't like it. 
-I looked at a few other push-button solutions, including [Amahi](https://www.amahi.org/) and [Turnkey Linux](http://www.turnkeylinux.org/) but decided that for the sake of my sanity (and, y'know, features) that I may as well just use an Ubuntu install and build it up from there.
-So, first things first, after the inital system installation (having selected ssh server and samba server during the install), let's get everything else I want installed:
+## BIOS update
+
+So, first things first, I wanted to get the latest BIOS running on this new machine, as I'd heard that there were issues running Linux under the F3 bios. The process honestly could not have been much more complicated. Basically, there were two options- a bootable DOS flash drive (heh, NO.) or install Windows and use Gigabyte's software to get this thing updated. So, after installing Windows, I had to grab Gigabyte's App Center, and then the @BIOS utility. Initiating the BIOS install was simple enough from that point, but then I clicked around in the application while it was doing its thing (i.e. flashing the bios, with a nice little progress bar) and I couldn't get back to the page with the progress bar.
+
+So, that was kind of a pain of a process, and was complicated even further by other issues I had with the network at the time, but I can't really blame the hardware for that.
+
+## Software Selection
+
+So now the question is what OS to use.
+
+I was initially going to use [FreeNAS](http://www.freenas.org/) because I wanted something that was pretty much point-and-click, but after some evaluation via virtual machines, I decided I didn't like it. I looked at a few other push-button solutions, including [Amahi](https://www.amahi.org/) and [Turnkey Linux](http://www.turnkeylinux.org/) but decided that for the sake of my sanity (and, y'know, features) that I may as well just use an Ubuntu install and build it up from there.
+
+## Data Transfer
+
+Since I was moving from a Windows machine to a Linux machine, I was going to have to reformat my harddisks. Not wanting to lose data, I borrowed a spare 3TB disk from a friend and installed a working Ubuntu system on it, and installed that disk along with each of my disks (one at a time) in my new machine. The basic process was to mount the old disk, copy the old files on to the temporary disk, reformat the old disk, and copy the files back. I did the data transfer with rsync in a screen session, given the lack of monitor to keep an eye on things. Basically I just kept an eye on the hard drive activity light to know when the transfer was finished.
+
+The only hiccup with this solution was that I had previously had to use a special tool to format my 3TB disk for Windows, so it was recognized as a 2TB disk and a ~750GB disk, and Ubuntu didn't recognize the 750GB partition, so I had to swap the disk back in to my Windows system to move the contents of the 750GB partition to the 2TB partition. Also, before restoring my files to the 3TB disk, I installed my OS, with the following partition map:
+
+| EFI boot | System | Data  |
+| 50MB     | 20GB   | 2.7TB |
+
+Once all of my data was copied over, and I had both disks installed in the machine, I was left with the following drive configuration:
+| Partition | Format | Mount Point | Size |
+|-----------|--------|-------------|------|
+|reserved  | EFI Boot| not mounted| 50MB|
+|/dev/sda1  | ext4| / | 20GB |
+|/dev/sda2 | ext4 | /mount/disk1 | /media/disk1 | 2.7TB |
+|/dev/sdb1 | ext4 | /mount/disk2 | 2TB |
+
+
+## System Setup
+
+This is probably the only part of this whole thing that other people might find useful.
+
+So, first things first, let's install some software. SSH server and samba server were selected upon installation, so that leaves uTorrent, stunnel, BTSync, and dropbox:
+
 ```
 sudo add-apt-repository ppa:tuxpoldo/btsync
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install btsync stunnel -y
@@ -24,12 +54,14 @@ mkdir ~/bin
 wget -O ~/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
 chmod +x ~/bin/dropbox.py
 ```
+
 If you're not too Linux-savvy, here's the breakdown there:
 1. First we add a repository that contains Bittorrent Sync
 2. Then we update the packages that the system knows about, install all the available updates, and install btsync and stunnel
 3. Then we grab uTorrent server and dropbox and throw them in ~/bin
 
 Now, uTorrent server doesn't have its own init script, so I'm using the one from [here](https://github.com/vortex-5/utorrent_initd/blob/master/utorrent). Naturally, the first few lines need to be modified to match my setup, so they now look like this:
+
 ```
 UTORRENT_PATH=/home/jimbo/bin/utorrent/utorrent-server-v3_0 #where you extracted your utserver executable
 LOGFILE=/home/jimbo/bin/utorrent/log/utorrent.log #must be a writable directory
@@ -43,3 +75,9 @@ With that, we can simply run `sudo service utorrent {start|stop|restart}` whenev
 
 Now, uTorrent server does not currently support SSL, so I'm using a utility called stunnel to open up an HTTPS port that will forward to the local port that uTorrent is listening on.
 **CONFIG GOES HERE**
+
+So now https://my-hostname/gui will load up the uTorrent gui over an HTTPS connection. We also want to close off the unencrypted uTorrent page from the outside world, which we do by ... **uTorrent stuff goes here**
+
+**BTSYNC CRAP**
+
+**DROPBOX CRAP**
