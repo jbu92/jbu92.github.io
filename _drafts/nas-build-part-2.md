@@ -76,6 +76,20 @@ With that, we can simply run `sudo service utorrent {start|stop|restart}` whenev
 Now, uTorrent server does not currently support SSL, so I'm using a utility called stunnel to open up an HTTPS port that will forward to the local port that uTorrent is listening on.
 **CONFIG GOES HERE**
 
+Generate ssl key
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/stunnel/stunnel.key -out /etc/stunnel/stunnel.crt
+
+stunnel configuration
+copy default
+delete service mummajummas, add
+[utorrent]
+accept = 443
+connect = 8888
+
+also key and cert
+and enable it in /etc/defaults/stunnel.conf
+
+
 So now https://my-hostname/gui will load up the uTorrent gui over an HTTPS connection. We also want to close off the unencrypted uTorrent page from the outside world, which we do by ... **uTorrent stuff goes here**
 
 **BTSYNC CRAP**
