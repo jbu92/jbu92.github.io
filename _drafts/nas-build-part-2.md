@@ -28,9 +28,11 @@ Since I was moving from a Windows machine to a Linux machine, I was going to hav
 The only hiccup with this solution was that I had previously had to use a special tool to format my 3TB disk for Windows, so it was recognized as a 2TB disk and a ~750GB disk, and Ubuntu didn't recognize the 750GB partition, so I had to swap the disk back in to my Windows system to move the contents of the 750GB partition to the 2TB partition. Also, before restoring my files to the 3TB disk, I installed my OS, with the following partition map:
 
 | EFI boot | System | Data  |
+|----------|--------|-------|
 | 50MB     | 20GB   | 2.7TB |
 
 Once all of my data was copied over, and I had both disks installed in the machine, I was left with the following drive configuration:
+
 | Partition | Format | Mount Point | Size |
 |-----------|--------|-------------|------|
 |reserved  | EFI Boot| not mounted| 50MB|
