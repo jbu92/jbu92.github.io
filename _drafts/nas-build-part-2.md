@@ -95,3 +95,7 @@ So now https://my-hostname/gui will load up the uTorrent gui over an HTTPS conne
 **BTSYNC CRAP**
 
 **DROPBOX CRAP**
+
+**sudo ufw for firewallness**
+**phpsysinfo**
+**set up an apache page with links to btsync/utorrent/phpsysinfo/whatever**
