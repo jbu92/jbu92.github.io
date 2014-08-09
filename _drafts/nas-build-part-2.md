@@ -62,6 +62,7 @@ If you're not too Linux-savvy, here's the breakdown there:
 2. Then we update the packages that the system knows about, install all the available updates, and install btsync and stunnel
 3. Then we grab uTorrent server and dropbox and throw them in ~/bin
 
+### uTorrent
 Now, uTorrent server doesn't have its own init script, so I'm using the one from [here](https://github.com/vortex-5/utorrent_initd/blob/master/utorrent). Naturally, the first few lines need to be modified to match my setup, so they now look like this:
 
 ```
@@ -76,28 +77,57 @@ SCRIPTNAME=/etc/init.d/utorrent #must match this file name
 With that, we can simply run `sudo service utorrent {start|stop|restart}` whenever we like, and more importantly, can tell it to start on boot with `sudo update-rc.d utorrent defaults`
 
 Now, uTorrent server does not currently support SSL, so I'm using a utility called stunnel to open up an HTTPS port that will forward to the local port that uTorrent is listening on.
-**CONFIG GOES HERE**
 
-Generate ssl key
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/stunnel/stunnel.key -out /etc/stunnel/stunnel.crt
+Firstly, we're going to need a keypair for SSL:  
+`sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/stunnel/stunnel.key -out /etc/stunnel/stunnel.crt`
 
-stunnel configuration
-copy default
-delete service mummajummas, add
+To configure stunnel, I copied the example configuration, removed all of the services, added my own (below), and set the cert and key directives to point to the files I just created.
+```
 [utorrent]
 accept = 443
 connect = 8888
-
-also key and cert
-and enable it in /etc/defaults/stunnel.conf
+```
 
 
-So now https://my-hostname/gui will load up the uTorrent gui over an HTTPS connection. We also want to close off the unencrypted uTorrent page from the outside world, which we do by ... **uTorrent stuff goes here**
+So now https://Tandy400/gui will load up the uTorrent gui over an HTTPS connection. We also want to close off the unencrypted uTorrent page from the outside world, which we do both by not allowing port 8080 through the firewall, and limiting access to 127.0.0.1 from within the web gui.
 
-**BTSYNC CRAP**
+### BTSync
+For the BTSync configuration, I wanted to leave the web server enabled for ease of use, but it's not the sort of thing that I'll need to manage a lot, so I bound it to the local interface, thus requiring an SSH tunnel to connect.  
+/etc/btsync/simple.conf:  
+```
+{
+        "device_name": "Tandy400",
+        "listening_port" : 0,                   // random port
+        "storage_path" : "/var/lib/btsync",
+        "check_for_updates" : false,          
+        "use_upnp" : false,
+        "webui" :
+        {
+                "listen" : "127.0.0.1:8888",
+                "login" : "jimbo",
+                "password" : "totally_the_best_password_ever"
+        }
+}
+```
 
-**DROPBOX CRAP**
+### Dropbox
 
-**sudo ufw for firewallness**
-**phpsysinfo**
-**set up an apache page with links to btsync/utorrent/phpsysinfo/whatever**
+To get dropbox going, you just have to run `dropbox.py start -i` to install the daemon, and the first time that you successfully start the daemon, you'll be provided with a URL to put in to your browser to link the dropbox CLI client to your account. For my own setup, I didn't want my dropbox folder to be in my home directory, so I created a symlink to /media/disk2/Syncs/Dropbox with `ln -s /media/disk2/SyncsDropbox ~/Dropbox`.
+It's pretty much that simple.
+
+### System Monitoring
+
+To monitor my system, I'm using a tool called [phpsysinfo](https://codeload.github.com/phpsysinfo/). It's dead simple to get going- just grab the tarball, extract it to your web directory, and change a couple configuration directives in the .ini file **if you want**.
+
+
+### Firewall Configuration
+
+Finally, it's time to manage the firewall. Apparently Ubuntu changed things around since the last time that I actively used it, so instead of just dumping some iptables rules into a file, we get to use a little utility called ufw.
+Opening up the ports I need couldn't be too much simpler:
+```
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw enable
+```
+
