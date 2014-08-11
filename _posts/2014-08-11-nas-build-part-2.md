@@ -49,13 +49,13 @@ This is probably the only part of this whole thing that other people might find 
 So, first things first, let's install some software. SSH server and samba server were selected upon installation, so that leaves uTorrent, stunnel, BTSync, and dropbox:
 
 {% highlight bash %}
-    sudo add-apt-repository ppa:tuxpoldo/btsync  
-    sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install btsync stunnel -y  
-    wget http://download-new.utorrent.com/endpoint/utserver/os/linux-x64-debian-7-0/track/beta/ && mv index.html utserver.tgz  
-    tar xvf utserver.tgz  
-    mkdir ~/bin  
-    wget -O ~/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"  
-    chmod +x ~/bin/dropbox.py  
+sudo add-apt-repository ppa:tuxpoldo/btsync  
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install btsync stunnel -y  
+wget http://download-new.utorrent.com/endpoint/utserver/os/linux-x64-debian-7-0/track/beta/ && mv index.html utserver.tgz  
+tar xvf utserver.tgz  
+mkdir ~/bin  
+wget -O ~/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"  
+chmod +x ~/bin/dropbox.py  
 {% endhighlight %}
 
 If you're not too Linux-savvy, here's the breakdown there:
@@ -66,14 +66,15 @@ If you're not too Linux-savvy, here's the breakdown there:
 ### uTorrent
 Now, uTorrent server doesn't have its own init script, so I'm using the one from [here](https://github.com/vortex-5/utorrent_initd/blob/master/utorrent). Naturally, the first few lines need to be modified to match my setup, so they now look like this:
 
-```
+{% highlight %}
 UTORRENT_PATH=/home/jimbo/bin/utorrent/utorrent-server-v3_0 #where you extracted your utserver executable  
 LOGFILE=/home/jimbo/bin/utorrent/log/utorrent.log #must be a writable directory  
 USER=jimbo #any user account you can create the utorrent user if you like  
 GROUP=users  
 NICE=15  
 SCRIPTNAME=/etc/init.d/utorrent #must match this file name  
-```
+{% endhighlight %}
+
 
 With that, we can simply run `sudo service utorrent {start|stop|restart}` whenever we like, and more importantly, can tell it to start on boot with `sudo update-rc.d utorrent defaults`
 
@@ -83,11 +84,12 @@ Firstly, we're going to need a keypair for SSL:
 `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/stunnel/stunnel.key -out /etc/stunnel/stunnel.crt`
 
 To configure stunnel, I copied the example configuration, removed all of the services, added my own (below), and set the cert and key directives to point to the files I just created.
-```
+{% highlight %}
 [utorrent]  
 accept = 443  
 connect = 8888  
-```
+{% endhighlight %}
+
 
 
 So now https://Tandy400/gui will load up the uTorrent gui over an HTTPS connection. We also want to close off the unencrypted uTorrent page from the outside world, which we do both by not allowing port 8080 through the firewall, and limiting access to 127.0.0.1 from within the web gui.
@@ -96,7 +98,7 @@ So now https://Tandy400/gui will load up the uTorrent gui over an HTTPS connecti
 For the BTSync configuration, I wanted to leave the web server enabled for ease of use, but it's not the sort of thing that I'll need to manage a lot, so I bound it to the local interface, thus requiring an SSH tunnel to connect.  
 /etc/btsync/simple.conf:  
 
-```
+{% highlight %}
 {  
         "device_name": "Tandy400",  
         "listening_port" : 0,                   // random port  
@@ -110,7 +112,8 @@ For the BTSync configuration, I wanted to leave the web server enabled for ease 
                 "password" : "totally_the_best_password_ever"  
         }  
 }  
-```
+{% endhighlight %}
+
 
 ### Dropbox
 
@@ -127,10 +130,11 @@ To monitor my system, I'm using a tool called [phpsysinfo](https://codeload.gith
 Finally, it's time to manage the firewall. Apparently Ubuntu changed things around since the last time that I actively used it, so instead of just dumping some iptables rules into a file, we get to use a little utility called ufw.
 Opening up the ports I need couldn't be too much simpler:
 
-```
+{% highlight bash %}
 sudo ufw allow ssh  
 sudo ufw allow http  
 sudo ufw allow https  
 sudo ufw enable  
-```
+{% endhighlight %}
+
 
