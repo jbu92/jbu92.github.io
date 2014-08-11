@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Nas Build - Part 2"
+title: "Nas Build - Part 2: Software"
 description: Software
 category: null
 tags: []
 published: true
+excerpt: "Updating the BIOS, installing software, configuring things...
 ---
 
 {% include JB/setup %}
@@ -66,12 +67,12 @@ If you're not too Linux-savvy, here's the breakdown there:
 Now, uTorrent server doesn't have its own init script, so I'm using the one from [here](https://github.com/vortex-5/utorrent_initd/blob/master/utorrent). Naturally, the first few lines need to be modified to match my setup, so they now look like this:
 
 ```
-UTORRENT_PATH=/home/jimbo/bin/utorrent/utorrent-server-v3_0 #where you extracted your utserver executable
-LOGFILE=/home/jimbo/bin/utorrent/log/utorrent.log #must be a writable directory
-USER=jimbo #any user account you can create the utorrent user if you like
-GROUP=users
-NICE=15
-SCRIPTNAME=/etc/init.d/utorrent #must match this file name
+UTORRENT_PATH=/home/jimbo/bin/utorrent/utorrent-server-v3_0 #where you extracted your utserver executable  
+LOGFILE=/home/jimbo/bin/utorrent/log/utorrent.log #must be a writable directory  
+USER=jimbo #any user account you can create the utorrent user if you like  
+GROUP=users  
+NICE=15  
+SCRIPTNAME=/etc/init.d/utorrent #must match this file name  
 ```
 
 With that, we can simply run `sudo service utorrent {start|stop|restart}` whenever we like, and more importantly, can tell it to start on boot with `sudo update-rc.d utorrent defaults`
