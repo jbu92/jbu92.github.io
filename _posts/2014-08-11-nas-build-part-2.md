@@ -66,7 +66,7 @@ If you're not too Linux-savvy, here's the breakdown there:
 ### uTorrent
 Now, uTorrent server doesn't have its own init script, so I'm using the one from [here](https://github.com/vortex-5/utorrent_initd/blob/master/utorrent). Naturally, the first few lines need to be modified to match my setup, so they now look like this:
 
-{% highlight conf %}
+{% highlight config %}
 UTORRENT_PATH=/home/jimbo/bin/utorrent/utorrent-server-v3_0 #where you extracted your utserver executable  
 LOGFILE=/home/jimbo/bin/utorrent/log/utorrent.log #must be a writable directory  
 USER=jimbo #any user account you can create the utorrent user if you like  
@@ -84,7 +84,7 @@ Firstly, we're going to need a keypair for SSL:
 `sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/stunnel/stunnel.key -out /etc/stunnel/stunnel.crt`
 
 To configure stunnel, I copied the example configuration, removed all of the services, added my own (below), and set the cert and key directives to point to the files I just created.
-{% highlight conf %}
+{% highlight config %}
 [utorrent]  
 accept = 443  
 connect = 8888  
@@ -98,7 +98,7 @@ So now https://Tandy400/gui will load up the uTorrent gui over an HTTPS connecti
 For the BTSync configuration, I wanted to leave the web server enabled for ease of use, but it's not the sort of thing that I'll need to manage a lot, so I bound it to the local interface, thus requiring an SSH tunnel to connect.  
 /etc/btsync/simple.conf:  
 
-{% highlight conf %}
+{% highlight config %}
 {  
 	"device_name": "Tandy400",  
 	"listening_port" : 0,                   // random port  
