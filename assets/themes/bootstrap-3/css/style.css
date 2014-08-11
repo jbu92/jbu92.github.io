@@ -23,10 +23,14 @@ h1, h2, h3, h4 {
 
 /* Table Borders */
 table {
- border: solid 2px;
+  border-collapse: collapse;
 }
-td {
+table, th, td {
  border: solid 1px;
+}
+
+th, td{
+  padding: 2px;
 }
 
 /* posts index */
