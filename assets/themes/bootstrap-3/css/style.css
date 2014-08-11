@@ -22,8 +22,8 @@ h1, h2, h3, h4 {
 }
 
 /* Table Borders */
-td {
- border: solid 2px lightgrey;
+table {
+ border: solid 2px;
 }
 
 
