@@ -36,10 +36,10 @@ Once all of my data was copied over, and I had both disks installed in the machi
 
 | Partition | Format | Mount Point | Size |
 |-----------|--------|-------------|------|
-|reserved  | EFI Boot| not mounted| 50MB|
-|/dev/sda1  | ext4| / | 20GB |
-|/dev/sda2 | ext4 | /mount/disk1 | /media/disk1 | 2.7TB |
-|/dev/sdb1 | ext4 | /mount/disk2 | 2TB |
+|reserved  | EFI Boot| not mounted | 50MB |
+|/dev/sda1 | ext4    | /           | 20GB |
+|/dev/sda2 | ext4    | /mount/disk1| 2.7TB |
+|/dev/sdb1 | ext4    | /mount/disk2| 2TB |
 
 
 ## System Setup
