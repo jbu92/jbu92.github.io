@@ -48,7 +48,7 @@ This is probably the only part of this whole thing that other people might find 
 
 So, first things first, let's install some software. SSH server and samba server were selected upon installation, so that leaves uTorrent, stunnel, BTSync, and dropbox:
 
-```
+{% highlight bash %}
     sudo add-apt-repository ppa:tuxpoldo/btsync  
     sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install btsync stunnel -y  
     wget http://download-new.utorrent.com/endpoint/utserver/os/linux-x64-debian-7-0/track/beta/ && mv index.html utserver.tgz  
@@ -56,7 +56,7 @@ So, first things first, let's install some software. SSH server and samba server
     mkdir ~/bin  
     wget -O ~/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"  
     chmod +x ~/bin/dropbox.py  
-```
+{% endhighlight %}
 
 If you're not too Linux-savvy, here's the breakdown there:
 1. First we add a repository that contains Bittorrent Sync
