@@ -5,7 +5,7 @@ description: Software
 category: null
 tags: []
 published: true
-excerpt: "Updating the BIOS, installing software, configuring things...
+excerpt: "Updating the BIOS, installing software, configuring things..."
 ---
 
 {% include JB/setup %}
