@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Welcome!
+title: It's a blog!
 tagline: 
 ---
 {% include JB/setup %}
 
 ## About
 
-This will eventually be like a blog or something, I dunno... We'll figure it out together!
+Welcome to my blog. It should primarily be about computers and stuff, and exists almost entirely for my own future reference.
 
 
 ## Recent Posts
