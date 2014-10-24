@@ -35,6 +35,7 @@ flag 5 is commented and base64
 Many people in the IRC support chat were utterly confused as to where to find flag 6. It was located at [ip address]:[port]/flag.
 
 ## OSINT
+All of the OSINT challenges in the preseason (and indeed in the regular season as well) were repeat challenges from the 2012 game, the answers to which could be found in a PDF published by the NCL (LINK)
 
 ## Web
 
