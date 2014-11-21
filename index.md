@@ -1,14 +1,13 @@
 ---
 layout: page
-title: It's a blog!
+title: JamesHaight.com
 tagline: 
 ---
 {% include JB/setup %}
 
 ## About
 
-Welcome to my blog. It should primarily be about computers and stuff, and exists almost entirely for my own future reference.
-
+Howdy. Until I can figure out how to modify the navbar... Check me out on <a href="http://www.linkedin.com/in/jameshaight">LinkedIn</a> and <a href="http://github.com/jbu92">GitHub</a>.
 
 ## Recent Posts
 {% for post in site.posts limit 5 %}
