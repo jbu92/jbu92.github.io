@@ -4,7 +4,7 @@ title: "Nas Build - Part 2: Software"
 description: Software
 category: null
 tags: []
-published: true
+comments: true
 excerpt: "Updating the BIOS, installing software, configuring things..."
 ---
 

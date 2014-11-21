@@ -4,6 +4,7 @@ title: "NAS Build - Part 1: Hardware"
 description: ""
 category: 
 tags: []
+comments: true
 excerpt: "For various reasons, I decided to move away from my current storage setup to a new NAS machine. Because I want to have at least something on this site, I decided to make a post about it. My initial setup, which I have been using for ~2 years, is a mid-sized tower machine running Windows 7 with a 500GB system disk, and a 2TB and a 3TB disk for data. The 500GB disk is…"
 ---
 

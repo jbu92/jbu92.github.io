@@ -4,6 +4,7 @@ title: "Multi-Homed Routing"
 description: ""
 category: 
 tags: []
+comments: true
 excerpt: "File that under 'huh. well, now I know how to do THAT.'"
 ---
 
