@@ -1,13 +1,14 @@
 ---
-layout: article
+layout: post
 title: "Nas Build - Part 2: Software"
 description: Software
 category: null
 tags: []
-comments: true
+published: true
 excerpt: "Updating the BIOS, installing software, configuring things..."
 ---
 
+{% include JB/setup %}
 
 ## BIOS update
 

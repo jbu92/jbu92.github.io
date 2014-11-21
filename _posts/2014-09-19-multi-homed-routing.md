@@ -1,12 +1,12 @@
 ---
-layout: article
+layout: post
 title: "Multi-Homed Routing"
 description: ""
 category: 
 tags: []
-comments: true
 excerpt: "File that under 'huh. well, now I know how to do THAT.'"
 ---
+{% include JB/setup %}
 
 #The Situation
 We had a machine sitting on three different subnets, which needed to be pingable via all of them. Under its current setup, it was only pingable from one IP address at a time. I had to fix it.
