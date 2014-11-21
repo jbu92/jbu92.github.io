@@ -7,7 +7,7 @@ tagline:
 
 ## About
 
-Howdy. Until I can figure out how to modify the navbar... Check me out on <a href="http://www.linkedin.com/in/jameshaight">LinkedIn</a> and <a href="http://github.com/jbu92">GitHub</a>.
+Howdy. I really need to come up with something to put here.
 
 ## Recent Posts
 {% for post in site.posts limit 5 %}
