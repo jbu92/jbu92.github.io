@@ -15,19 +15,19 @@
 
 /* Jekyll Bootstrap Colors */
 h1, h2, h3, h4 {
-  color: #D75C37;
+  color: #d35400;
 }
 #footer {
   background-color: #C3D7DF;
 }
 body {
-  background-color: #F5F5F5;
+  background-color: #ecf0f1;
 }
 a:link {
-  color: #6991AC;
+  color: #3498db;
 }
 a:visited {
-  color: #67727A;
+  color: #2c88c5;
 }
 /* Table Borders */
 table {
