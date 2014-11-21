@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 ## Introduction
 For various reasons, I decided to move away from my current storage setup to a new NAS machine. Because I want to have at least *something* on this site, I decided to make a post about it.

@@ -8,7 +8,6 @@ published: true
 excerpt: "Updating the BIOS, installing software, configuring things..."
 ---
 
-{% include JB/setup %}
 
 ## BIOS update
 
