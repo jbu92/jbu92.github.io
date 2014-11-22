@@ -2353,7 +2353,8 @@ border-width:1px 0 0}
 float:left;
 padding:15px 15px;
 font-size:18px;
-line-height:20px}
+line-height:20px;
+text-decoration:none}
 .navbar-brand:hover,.navbar-brand:focus{
 text-decoration:none}
 @media(min-width:768px){
