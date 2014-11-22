@@ -21,8 +21,8 @@ h1, h2, h3, h4 {
   background-color: #34495e;
   color:#95a5a6;
 }
-#footer a:link{
-  color: white;
+#footer a:link, a:visited{
+  color: #3498db;
 }
 body {
   background-color: #ecf0f1;
