@@ -2645,9 +2645,9 @@ cursor:default;
 background-color:#2980b9;
 border-color:#34495e}
 .pagination>.disabled>span,.pagination>.disabled>span:hover,.pagination>.disabled>span:focus,.pagination>.disabled>a,.pagination>.disabled>a:hover,.pagination>.disabled>a:focus{
-color:#ecf0f1;
+color:#7f8c8d;
 cursor:not-allowed;
-background-color:#2980b9;
+background-color:#34495e;
 border-color:#34495e}
 .pagination-lg>li>a,.pagination-lg>li>span{
 padding:10px 16px;
