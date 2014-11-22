@@ -2510,7 +2510,8 @@ color: #777}
 color: #ecf0f1}
 .navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus{
 color: #34495e;
-background-color:#3498db}
+background-color:#3498db;
+text-decoration: none;}
 .navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{
 color:#555;
 background-color:#e7e7e7}
