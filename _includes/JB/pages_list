@@ -34,8 +34,6 @@ Usage:
       {% endif %}
     {% endif %}
   {% endfor %}
-  <li><a href="http://www.linkedin.com/in/jameshaight">LinkedIn</a></li>
-  <li><a href="http://github.com/jbu92">GitHub</a></li>
 {% endif %}
 {% assign pages_list = nil %}
 {% assign group = nil %}
