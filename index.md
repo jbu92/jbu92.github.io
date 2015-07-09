@@ -7,7 +7,7 @@ tagline:
 
 ## About
 
-Howdy. I really need to come up with something to put here.
+Hey check it out it's a thing. GPG key available [here](https://keybase.io/jhaight/key.asc} if you need it for some reason.
 
 ## Recent Posts
 {% for post in site.posts limit 5 %}
@@ -15,3 +15,4 @@ Howdy. I really need to come up with something to put here.
 {{ post.excerpt | strip_html}}<br>
             <a href="{{ post.url }}">Read more...</a><br><br>
 {% endfor %}
+
