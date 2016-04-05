@@ -18,5 +18,5 @@ As of 2015, I am a Security Analyst with Dell SecureWorks. Prior to that, I was 
 
 My passions have always boiled down to technology and education, which I think boils down to being driven to learn and understand all that I can. This passion led me down a fairly straightforward path to pursue a career in information security.
 
-##Standards
+## Standards
 I do not speak for my employer. Any and all original research represented by the writings present on this site is/was/shall be conducted on my own time and on my own dime, and any exceptions to this shall be appropriately identified.
