@@ -19,11 +19,11 @@ tagline:
   
 ## About
 
-GCIA certified incident analyst for Dell SecureWorks.
-Why do I have this page?
-What's it for?
-Can I find anything useful here?
-Well it used to just be so I could put "me@jameshaight.com" on my resume, but now it plays host to that little badge up there that says I have a GCIA, too.
+GCIA certified incident analyst for Dell SecureWorks.  
+Why do I have this page?  
+What's it for?  
+Can I find anything useful here?  
+Well it used to just be so I could put "me@jameshaight.com" on my resume, but now it plays host to that little badge up there that says I have a GCIA, too.  
 My GPG key is available [here](https://keybase.io/jhaight/key.asc) if you need it for some reason.
 
 ## Recent Posts
