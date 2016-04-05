@@ -1,7 +1,7 @@
 ---
 layout: page
-title: JamesHaight.com
-tagline: 
+title: Big Orange Title is Big!
+tagline: and Orange!
 ---
 {% include JB/setup %}
 
