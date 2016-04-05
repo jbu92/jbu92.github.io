@@ -19,7 +19,7 @@ tagline:
   
 ## About
 
-GCIA certified incident analyst for Dell SecureWorks.  
+Hey look it's a website with a thing on it!
 
 Why do I have this page? What's it for?  
 Well it used to just be so I could put "me@jameshaight.com" on my resume, but now it plays host to that little badge up there that says I have a GCIA, too.  
