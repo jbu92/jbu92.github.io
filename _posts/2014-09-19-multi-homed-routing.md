@@ -8,12 +8,12 @@ excerpt: "File that under 'huh. well, now I know how to do THAT.'"
 ---
 {% include JB/setup %}
 
-#The Situation
+# The Situation
 We had a machine sitting on three different subnets, which needed to be pingable via all of them. Under its current setup, it was only pingable from one IP address at a time. I had to fix it.
 
 The interfaces are set up as follows: eth0 is on the 172.16.0.0/19 subnet, eth1 is on 172.16.32.0/19, and eth2 is on 172.16.64.0/19. Our addressing convention uses 254 as the gateway.
 
-#The Fix
+# The Fix
 The fix is super-simple, and there's a half-dozen blog posts exactly like this on how to achieve this end goal. For some reason, those posts are much longer than this one.
 
 The current default gateway is 172.16.63.254, so we'll leave that alone.
