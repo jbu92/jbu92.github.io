@@ -7,7 +7,7 @@ tagline:
 
 ## About
 
-Hey check it out it's a thing. GPG key available [here](https://keybase.io/jhaight/key.asc} if you need it for some reason.
+Hey check it out it's a thing. GPG key available [here](https://keybase.io/jhaight/key.asc) if you need it for some reason.
 
 ## Recent Posts
 {% for post in site.posts limit 5 %}
