@@ -28,7 +28,6 @@ published: true
       o.parentNode.insertBefore(s, o);
       })();
   </script>
-<br>
 <div data-iframe-width="250" data-iframe-height="270" data-share-badge-id="0b3482e6-86ce-40e1-becb-b0c74e527257"></div>
   <script type="text/javascript">
     (function() {
