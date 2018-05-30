@@ -49,10 +49,3 @@ Well it used to just be so I could put "me@jameshaight.com" on my resume, but no
 
 Can I find anything useful here? (spoiler alert: no)  
 My GPG key is available [here](https://keybase.io/jhaight/key.asc) if you need it for some reason.
-
-## Recent Posts
-{% for post in site.posts limit 5 %}
-#### {{ post.date | date: "%B %e, %Y" }} | {{ post.title }}
-{{ post.excerpt | strip_html}}<br>
-            <a href="{{ post.url }}">Read more...</a><br><br>
-{% endfor %}
