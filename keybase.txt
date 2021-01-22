@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/jhaight
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jameshaight.com
+  * I am jhaight (https://keybase.io/jhaight) on keybase.
+  * I have a public key with fingerprint C67E 1198 700B 0B55 DA0E  1F49 0097 DFCE 3819 1F78
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01208741cb90b2ff6cb40d0bc5fb7748119269977d63973636d33d075ecf1f96b49d0a",
+      "fingerprint": "c67e1198700b0b55da0e1f490097dfce38191f78",
+      "host": "keybase.io",
+      "key_id": "0097dfce38191f78",
+      "kid": "0101f8a650afe390cb37fe165512ade945a59eae7a89c1857c65324870b08156952b0a",
+      "uid": "5f19f1eaf5a9d83e8a1271b51db7c600",
+      "username": "jhaight"
+    },
+    "service": {
+      "hostname": "jameshaight.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1611349195,
+  "expire_in": 157680000,
+  "prev": "dbdc36b3b5952fb1ffaf5d71a0b91abaedd3c8131d5e15aee34421839503407b",
+  "seqno": 28,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNxAnicZVJtUFRVGF5glwQr8KuBAVvnjmg4ROfcu+d+rKgEYyIhwSK6mbncc++5
+7OVjd91dVogxHWf6UNCRrQZGRs2cCgmnMuNLNmOldIKkZqrJGYycCEXCzY+CaQS7
+i/Gr8+ed857nec7zvPP2PRali43QNQ5f5hON1RH9vUeqdCXzM/prKeyUayhzLVVO
+ZgupkInHaytXZcpMAUgDnjNBCQsA04rCStgEZIAlpGCOM/EQCjQrCBwns4zAMSzD
+ygwjAw4RSYGKwGKTIAORSqMU1VFK3C636vBqshLLEY3KcwBggBGSRUCgYhIAEDhZ
+kQjDQwEqHK8R7U5PmKGZw6KHpKtOraddbA/t/R8/5xtAhRdZBESFMAKQMMMpBLII
+QVqUiWBCIhKISDiRFyTII05iEUObNEMY8BCxAqLxrO+qWTmkQEGBRFSQKMg8Q3gR
+0hzECMpYYwIQBnqI2yFWEg1dZhfVUruX2p1GaU2fKpHwXMNB5gBa8TwEpUvOSo3t
+cju9TslZoT3avV6Xxxwme2tcYfQugm3/6diw6pC1SWoMH3F7VKeDMkMNKXnVsDBk
+IWRMAhRQGkWqXaqb2NQwAnEsD7QT/of4NEkZyxLDYgYjLaiCoaJo0WQOigALUMQi
+kWVG4iEDZUQgEglhTCYa8oyAAGMCHKbCyXY6nJSZ5jWfYqmm6VFLHaK3yk2o3cHe
+7XpdRKwu2hAZXjFdbEz83OIlPxE3vbQh0xZorXiUMUfxJeVbozzWyt/Hvswqtiwc
+e/BJRZS0uvG9Zb2Z3w39uIZL9yX4x94vHtcfG885NTNvfHKmaHNDXz03bL+24PHo
+huNnhuNOp7z+5hvnG0qUD5UlLeDPVVf/mA60+G+UWr2vJq8bcVibIg3/9HQeLlxn
+GSlYaGkt170DUtuju58rn8D00zcO3Z1MGkjOCl3Ze3KJZaBn6Dq88+DOIDu8+5m2
+b/zbjckVo74jE9sCaBCFvro7kh6zwt2zI7S/tTbdXaQ//nJwlN1zqXFfyXRk8LLY
+eWn4ljPy4v2Ucy16n29z/yJ2YJu1Y8P1QJLxbFlZa8LkRbp92dU4g7pyecT3v50i
+418fuP/3Jm7o0/qOgxm5Md8mphjz24OjR6E1OvfkvJTU803GuLUTDqvjpS33Oklh
+7oXsjpsOMf8skzWav3Hs3ufPtv+0Zk9Ty+KIDRfOfdGb+fYtOqP9tfii5jOry1bm
+zOzkU3Omj+0tWHE0uD6p5odQrv+p7mr94qDbMsF5XAUfL4pdmiHCBQeNWz878evP
+2fNXIVQ7lvfuI7c33tYXwMau0PObXknoq/ulPtsf39Uz9BaYKs7JjMoK7M+rOvGi
+Y3miv9Bgn2rrftKSeGXmBSUjL3vfgbq/bpYd2nE4YMgyUG3iYFVzKLe5Lqtr8IMt
+p3cNTjV1z6zNu/ZRW6P/X5OLujU=
+=byQx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jhaight
+
+==================================================================
